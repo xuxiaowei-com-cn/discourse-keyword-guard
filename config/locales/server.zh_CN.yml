@@ -1,0 +1,62 @@
+zh_CN:
+  keyword_guard:
+    title: "关键词守卫"
+    errors:
+      blocked: "内容包含禁止的关键词：%{keywords}。请修改后再发布。"
+    list_separator: "、"
+    more_keywords: " 等 %{count} 个"
+    scopes:
+      username: "用户名"
+      name: "昵称"
+      bio: "个人简介"
+      chat_channel_name: "聊天群名称"
+      chat_message: "聊天内容"
+    actions:
+      blocked: "发布前拦截"
+      logged: "仅记录"
+      silenced: "已禁言用户"
+      silenced_and_deleted: "已禁言用户并删除内容"
+      suspended: "已封禁用户"
+      suspended_and_deleted: "已封禁用户并删除内容"
+    moderation:
+      suspend_reason: "该账号因违反社区准则，已被系统自动封禁。"
+      silence_reason: "该账号因违反社区准则，已被系统自动禁言。"
+      suspension_message: "您的账号已被系统封禁。如果您认为这是一个错误，请联系站点管理员。"
+    admin:
+      scan_enqueued: "关键词扫描任务已加入队列，将在后台执行。"
+  system_messages:
+    keyword_guard_hit:
+      title: "关键词守卫操作"
+      subject_template: "关键词守卫：检测到禁止的关键词"
+      text_body_template: |
+        关键词守卫执行了一项操作。
+
+        - 检查范围：%{scope}
+        - 命中关键词：%{keywords}
+        - 执行动作：%{action}
+
+        请在 %{base_url}/admin/plugins/keyword-guard 查看关键词守卫记录。
+  site_settings:
+    keyword_guard_enabled: "启用关键词守卫。守卫会读取内置监控词列表，并检查用户名、昵称、个人简介、聊天群名称和聊天内容。"
+    keyword_guard_use_watched_words: "使用 <a href=\"/admin/customize/watched_words/action/block\">后台 → 自定义 → 监控词</a> 中的 <code>block</code> 和 <code>silence</code> 列表。启用后，<code>block</code> 词条会在发布前被拦截，<code>silence</code> 词条会触发发布后的禁言操作。"
+    keyword_guard_extra_keywords: "可选的额外关键词，每行一个。这些关键词独立于监控词，会在发布前被拦截。支持以 <code>re:</code> 开头表示正则表达式，以 <code>#</code> 开头表示注释。"
+    keyword_guard_extra_match_mode: "额外关键词的匹配方式。中文等没有单词分隔符的语言建议使用 <code>substring</code>（子串匹配）；<code>word</code> 按单词边界匹配；<code>regex</code> 将每一行都视为正则表达式。"
+    keyword_guard_extra_case_sensitive: "额外关键词区分大小写。"
+    keyword_guard_scope_username: "在发布前检查用户名，并在用户名变更时再次检查。"
+    keyword_guard_scope_name: "在发布前检查昵称，并在昵称变更时再次检查。"
+    keyword_guard_scope_bio: "在发布前检查个人简介。"
+    keyword_guard_scope_chat_channel_name: "在发布前检查聊天群名称和 Slug。"
+    keyword_guard_scope_chat_message: "在发布前检查聊天内容。"
+    keyword_guard_exempt_staff: "不对管理员和版主执行关键词检查。"
+    keyword_guard_exempt_groups: "这些用户组的成员不受关键词守卫限制。"
+    keyword_guard_exempt_usernames: "不受关键词守卫限制的用户名，使用逗号、空格或 <code>|</code> 分隔。"
+    keyword_guard_show_keywords: "在拦截提示中显示命中的关键词。如果显示具体关键词可能帮助用户绕过过滤，请关闭此设置。"
+    keyword_guard_block_action: "当已发布的内容（例如导入内容或绕过了校验的内容）命中 <code>block</code> 词条或额外关键词时执行的操作。"
+    keyword_guard_silence_action: "当已发布的内容命中 <code>silence</code> 监控词时执行的操作。默认禁言作者。"
+    keyword_guard_silence_days: "命中 <code>silence</code> 监控词后禁言用户的天数。最大值相当于永久禁言。"
+    keyword_guard_suspend_days: "已发布内容命中 <code>block</code> 词条或额外关键词后封禁用户的天数。最大值相当于永久封禁。"
+    keyword_guard_suspend_message: "发送给被封禁用户的可选通用消息。请勿在此包含具体规则或关键词；封禁邮件会保持通用。留空则使用默认消息。"
+    keyword_guard_notify_user: "封禁或禁言用户时，自动以 system 用户发送一封通用邮件。邮件不会提及命中的关键词或具体规则。"
+    keyword_guard_notify_moderators: "关键词守卫执行发布后操作时，向版主发送私信通知。"
+    keyword_guard_log_hits: "记录每一次被拦截或被执行操作的关键词命中，供管理员审计。"
+    keyword_guard_hit_retention_days: "关键词守卫审计记录的保留天数。"

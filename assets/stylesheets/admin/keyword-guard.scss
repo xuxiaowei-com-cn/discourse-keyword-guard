@@ -1,0 +1,43 @@
+.keyword-guard {
+  &__links {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+    min-width: 7rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--primary-low);
+    border-radius: 8px;
+  }
+
+  &__stat-value {
+    font-size: var(--font-up-3);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__stat-label {
+    color: var(--primary-medium);
+    font-size: var(--font-down-1);
+  }
+
+  &__content {
+    max-width: 28rem;
+    overflow-wrap: anywhere;
+  }
+
+  &__empty {
+    color: var(--primary-medium);
+  }
+}

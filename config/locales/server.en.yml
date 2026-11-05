@@ -1,0 +1,62 @@
+en:
+  keyword_guard:
+    title: "Keyword Guard"
+    errors:
+      blocked: "This content contains prohibited keyword(s): %{keywords}. Please revise it and try again."
+    list_separator: ", "
+    more_keywords: " and %{count} more"
+    scopes:
+      username: "Username"
+      name: "Display name"
+      bio: "Bio"
+      chat_channel_name: "Chat channel name"
+      chat_message: "Chat message"
+    actions:
+      blocked: "Blocked before publishing"
+      logged: "Recorded only"
+      silenced: "User silenced"
+      silenced_and_deleted: "User silenced and content deleted"
+      suspended: "User suspended"
+      suspended_and_deleted: "User suspended and content deleted"
+    moderation:
+      suspend_reason: "This account has been suspended by the system for violating the community guidelines."
+      silence_reason: "This account has been silenced by the system for violating the community guidelines."
+      suspension_message: "Your account has been suspended by the system. Please contact the site staff if you believe this is a mistake."
+    admin:
+      scan_enqueued: "The keyword scan has been queued. It will run in the background."
+  system_messages:
+    keyword_guard_hit:
+      title: "Keyword guard action"
+      subject_template: "Keyword guard: prohibited keyword detected"
+      text_body_template: |
+        A keyword guard action was taken.
+
+        - Scope: %{scope}
+        - Keyword(s): %{keywords}
+        - Action: %{action}
+
+        Review the keyword guard log at %{base_url}/admin/plugins/keyword-guard.
+  site_settings:
+    keyword_guard_enabled: "Enable the keyword guard. The guard reads the built-in watched words lists and applies them to usernames, display names, bios, chat channel names and chat messages."
+    keyword_guard_use_watched_words: "Use the <code>block</code> and <code>silence</code> lists from <a href=\"/admin/customize/watched_words/action/block\">Admin → Customize → Watched Words</a>. When enabled, <code>block</code> words are rejected before publishing and <code>silence</code> words trigger the post-publication silence action."
+    keyword_guard_extra_keywords: "Optional additional keywords, one per line. These are independent of watched words and are blocked before publishing. Supports <code>re:</code> prefixes for regular expressions and <code>#</code> comments."
+    keyword_guard_extra_match_mode: "How the additional keywords are matched. <code>substring</code> is recommended for Chinese and other languages without word separators; <code>word</code> requires word boundaries; <code>regex</code> treats every extra line as a regular expression."
+    keyword_guard_extra_case_sensitive: "Match additional keywords case-sensitively."
+    keyword_guard_scope_username: "Check usernames before they are published and after they are changed."
+    keyword_guard_scope_name: "Check display names before they are published and after they are changed."
+    keyword_guard_scope_bio: "Check user bios before they are published."
+    keyword_guard_scope_chat_channel_name: "Check chat channel names and slugs before they are published."
+    keyword_guard_scope_chat_message: "Check chat messages before they are published."
+    keyword_guard_exempt_staff: "Do not apply the guard to administrators and moderators."
+    keyword_guard_exempt_groups: "Members of these groups are exempt from the guard."
+    keyword_guard_exempt_usernames: "Usernames exempt from the guard, separated by commas, spaces or <code>|</code>."
+    keyword_guard_show_keywords: "Show the matched keywords in the rejection message. Disable this if revealing the exact keyword would help users evade the filter."
+    keyword_guard_block_action: "Action to take when a <code>block</code> word or an additional keyword is found in content that was already published (for example, imported content or a validation bypass)."
+    keyword_guard_silence_action: "Action to take when a <code>silence</code> watched word is found in published content. The default silences the author."
+    keyword_guard_silence_days: "Number of days a user is silenced after matching a <code>silence</code> watched word. The maximum is an effectively permanent silence."
+    keyword_guard_suspend_days: "Number of days a user is suspended after matching a <code>block</code> word or an additional keyword in published content. The maximum is an effectively permanent suspension."
+    keyword_guard_suspend_message: "Optional generic message sent to a suspended user. Do not include specific rules or keywords here; the suspension email is intentionally generic. Leave blank to use the default message."
+    keyword_guard_notify_user: "Automatically send a generic email from the system user when a user is suspended or silenced. The email does not mention the matched keyword or rule."
+    keyword_guard_notify_moderators: "Send a private message to the moderators when the guard takes a post-publication action."
+    keyword_guard_log_hits: "Record every blocked or enforced keyword match for the admin audit log."
+    keyword_guard_hit_retention_days: "Number of days to keep keyword guard audit records."

@@ -1,0 +1,13 @@
+import { ajax } from "discourse/lib/ajax";
+import DiscourseRoute from "discourse/routes/discourse";
+import { i18n } from "discourse-i18n";
+
+export default class AdminPluginsShowDiscourseKeywordGuardRoute extends DiscourseRoute {
+  model() {
+    return ajax("/admin/plugins/discourse-keyword-guard/api/hits.json");
+  }
+
+  titleToken() {
+    return i18n("keyword_guard.admin.title");
+  }
+}

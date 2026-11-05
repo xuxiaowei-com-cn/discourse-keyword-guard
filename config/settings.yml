@@ -1,0 +1,115 @@
+plugins:
+  keyword_guard_enabled:
+    default: false
+    client: false
+
+  # Keyword sources ---------------------------------------------------------
+  keyword_guard_use_watched_words:
+    default: true
+    client: false
+  keyword_guard_extra_keywords:
+    default: ""
+    textarea: true
+    client: false
+  keyword_guard_extra_match_mode:
+    default: "substring"
+    type: enum
+    choices:
+      - substring
+      - word
+      - regex
+    client: false
+  keyword_guard_extra_case_sensitive:
+    default: false
+    client: false
+
+  # Scopes ------------------------------------------------------------------
+  keyword_guard_scope_username:
+    default: true
+    client: false
+  keyword_guard_scope_name:
+    default: true
+    client: false
+  keyword_guard_scope_bio:
+    default: true
+    client: false
+  keyword_guard_scope_chat_channel_name:
+    default: true
+    client: false
+  keyword_guard_scope_chat_message:
+    default: true
+    client: false
+
+  # Exemptions --------------------------------------------------------------
+  keyword_guard_exempt_staff:
+    default: true
+    client: false
+  keyword_guard_exempt_groups:
+    type: group_list
+    list_type: compact
+    default: ""
+    allow_any: false
+    client: false
+  keyword_guard_exempt_usernames:
+    default: ""
+    textarea: true
+    client: false
+
+  # Pre-publication behaviour ----------------------------------------------
+  keyword_guard_show_keywords:
+    default: true
+    client: false
+
+  # Post-publication behaviour ---------------------------------------------
+  # Applied when a watched word from /action/block (or an extra keyword) is
+  # found in content that was published anyway (imports, bypassed validation,
+  # or content created before the word was added).
+  keyword_guard_block_action:
+    default: "suspend"
+    type: enum
+    choices:
+      - none
+      - silence
+      - suspend
+      - suspend_and_delete
+    client: false
+  # Applied when a watched word from /action/silence is found in published
+  # content.
+  keyword_guard_silence_action:
+    default: "silence"
+    type: enum
+    choices:
+      - none
+      - silence
+      - silence_and_delete
+    client: false
+  keyword_guard_silence_days:
+    default: 36500
+    min: 1
+    max: 36500
+    client: false
+  keyword_guard_suspend_days:
+    default: 36500
+    min: 1
+    max: 36500
+    client: false
+  keyword_guard_suspend_message:
+    default: ""
+    textarea: true
+    client: false
+  keyword_guard_notify_user:
+    default: true
+    client: false
+  keyword_guard_notify_moderators:
+    default: true
+    client: false
+
+  # Audit -------------------------------------------------------------------
+  keyword_guard_log_hits:
+    default: true
+    client: false
+  keyword_guard_hit_retention_days:
+    default: 90
+    min: 1
+    max: 3650
+    client: false
