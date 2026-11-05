@@ -8,7 +8,7 @@ module Jobs
       def execute(args = {})
         return if !SiteSetting.keyword_guard_enabled
 
-        DiscourseKeywordGuard::Scan.recent
+        ::DiscourseKeywordGuard::Scan.recent
       end
     end
   end

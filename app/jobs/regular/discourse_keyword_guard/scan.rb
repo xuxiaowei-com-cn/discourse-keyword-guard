@@ -10,9 +10,9 @@ module Jobs
 
         case args["mode"].presence || args[:mode].presence || "recent"
         when "full"
-          DiscourseKeywordGuard::Scan.full
+          ::DiscourseKeywordGuard::Scan.full
         else
-          DiscourseKeywordGuard::Scan.recent
+          ::DiscourseKeywordGuard::Scan.recent
         end
       end
     end
