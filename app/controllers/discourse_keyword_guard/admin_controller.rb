@@ -2,6 +2,8 @@
 
 module ::DiscourseKeywordGuard
   class AdminController < ::Admin::AdminController
+    requires_plugin "discourse-keyword-guard"
+
     PAGE_SIZE = 50
 
     # Serves the Ember admin route. The route map and template live in
