@@ -37,9 +37,9 @@ zh_CN:
 
         请在 %{base_url}/admin/plugins/keyword-guard 查看关键词守卫记录。
   site_settings:
-    keyword_guard_enabled: "启用关键词守卫。守卫会读取内置监控词列表，并检查用户名、昵称、个人简介、聊天群名称和聊天内容。"
-    keyword_guard_use_watched_words: "使用 <a href=\"/admin/customize/watched_words/action/block\">后台 → 自定义 → 监控词</a> 中的 <code>block</code> 和 <code>silence</code> 列表。启用后，<code>block</code> 词条会在发布前被拦截，<code>silence</code> 词条会触发发布后的禁言操作。"
-    keyword_guard_extra_keywords: "可选的额外关键词，每行一个。这些关键词独立于监控词，会在发布前被拦截。支持以 <code>re:</code> 开头表示正则表达式，以 <code>#</code> 开头表示注释。"
+    keyword_guard_enabled: "启用关键词守卫。守卫会读取内置关注词列表，并检查用户名、昵称、个人简介、聊天群名称和聊天内容。"
+    keyword_guard_use_watched_words: "使用 <a href=\"/admin/customize/watched_words/action/block\">后台 → 自定义 → 关注词</a> 中的 <code>block</code> 和 <code>silence</code> 列表。启用后，<code>block</code> 词条会在发布前被拦截，<code>silence</code> 词条会触发发布后的禁言操作。"
+    keyword_guard_extra_keywords: "可选的额外关键词，每行一个。这些关键词独立于关注词，会在发布前被拦截。支持以 <code>re:</code> 开头表示正则表达式，以 <code>#</code> 开头表示注释。"
     keyword_guard_extra_match_mode: "额外关键词的匹配方式。中文等没有单词分隔符的语言建议使用 <code>substring</code>（子串匹配）；<code>word</code> 按单词边界匹配；<code>regex</code> 将每一行都视为正则表达式。"
     keyword_guard_extra_case_sensitive: "额外关键词区分大小写。"
     keyword_guard_scope_username: "在发布前检查用户名，并在用户名变更时再次检查。"
@@ -52,8 +52,8 @@ zh_CN:
     keyword_guard_exempt_usernames: "不受关键词守卫限制的用户名，使用逗号、空格或 <code>|</code> 分隔。"
     keyword_guard_show_keywords: "在拦截提示中显示命中的关键词。如果显示具体关键词可能帮助用户绕过过滤，请关闭此设置。"
     keyword_guard_block_action: "当已发布的内容（例如导入内容或绕过了校验的内容）命中 <code>block</code> 词条或额外关键词时执行的操作。"
-    keyword_guard_silence_action: "当已发布的内容命中 <code>silence</code> 监控词时执行的操作。默认禁言作者。"
-    keyword_guard_silence_days: "命中 <code>silence</code> 监控词后禁言用户的天数。最大值相当于永久禁言。"
+    keyword_guard_silence_action: "当已发布的内容命中 <code>silence</code> 关注词时执行的操作。默认禁言作者。"
+    keyword_guard_silence_days: "命中 <code>silence</code> 关注词后禁言用户的天数。最大值相当于永久禁言。"
     keyword_guard_suspend_days: "已发布内容命中 <code>block</code> 词条或额外关键词后封禁用户的天数。最大值相当于永久封禁。"
     keyword_guard_suspend_message: "发送给被封禁用户的可选通用消息。请勿在此包含具体规则或关键词；封禁邮件会保持通用。留空则使用默认消息。"
     keyword_guard_notify_user: "封禁或禁言用户时，自动以 system 用户发送一封通用邮件。邮件不会提及命中的关键词或具体规则。"
