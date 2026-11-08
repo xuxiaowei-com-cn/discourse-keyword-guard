@@ -69,7 +69,8 @@ module ::DiscourseKeywordGuard
 
     def scan_user_profiles
       UserProfile
-        .where("updated_at > ?", @since)
+        .joins(:user)
+        .where("users.updated_at > ?", @since)
         .find_in_batches(batch_size: BATCH_SIZE) do |profiles|
           profiles.each do |profile|
             user = profile.user
